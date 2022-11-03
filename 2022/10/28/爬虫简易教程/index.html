@@ -10,9 +10,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Ltuka,"> 
-    <meta name="description" content="爬虫简易教程基础模块的导入12import requestsfrom bs4 import BeautifulSoup
+    <meta name="description" content="爬虫简易教程基础模块的导入import requests
+from bs4 import BeautifulSoup
 
-请求并解析即将爬取的网页12345678xxx_url =&amp;#x27;&amp;#x,"> 
+请求并解析即将爬取的网页xxx_url =&amp;#39;&amp;#39;
+headers,"> 
     <meta name="author" content="sugar_chuan"> 
     <link rel="alternative" href="atom.xml" title="雎川" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -21,9 +23,11 @@
     
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:title" content="爬虫简易教程 - 雎川"/>
-    <meta name="twitter:description" content="爬虫简易教程基础模块的导入12import requestsfrom bs4 import BeautifulSoup
+    <meta name="twitter:description" content="爬虫简易教程基础模块的导入import requests
+from bs4 import BeautifulSoup
 
-请求并解析即将爬取的网页12345678xxx_url =&amp;#x27;&amp;#x,"/>
+请求并解析即将爬取的网页xxx_url =&amp;#39;&amp;#39;
+headers,"/>
     
     
     
@@ -31,9 +35,11 @@
     <meta property="og:site_name" content="雎川"/>
     <meta property="og:type" content="object"/>
     <meta property="og:title" content="爬虫简易教程 - 雎川"/>
-    <meta property="og:description" content="爬虫简易教程基础模块的导入12import requestsfrom bs4 import BeautifulSoup
+    <meta property="og:description" content="爬虫简易教程基础模块的导入import requests
+from bs4 import BeautifulSoup
 
-请求并解析即将爬取的网页12345678xxx_url =&amp;#x27;&amp;#x,"/>
+请求并解析即将爬取的网页xxx_url =&amp;#39;&amp;#39;
+headers,"/>
     
 <link rel="stylesheet" href="/css/diaspora.css">
 
@@ -75,31 +81,51 @@
 
         </div>
         <div class="content markdown">
-            <h1 id="爬虫简易教程"><a href="#爬虫简易教程" class="headerlink" title="爬虫简易教程"></a>爬虫简易教程</h1><h2 id="基础模块的导入"><a href="#基础模块的导入" class="headerlink" title="基础模块的导入"></a>基础模块的导入</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br></pre></td></tr></table></figure>
-
-<h2 id="请求并解析即将爬取的网页"><a href="#请求并解析即将爬取的网页" class="headerlink" title="请求并解析即将爬取的网页"></a>请求并解析即将爬取的网页</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">xxx_url =&#x27;&#x27;</span><br><span class="line">headers = &#123;</span><br><span class="line">&quot;&#x27;你在登录信息中php文件中查看到的headers信息，一般在最后一行，格式如下&#x27;&quot;</span><br><span class="line">&#x27;User-Agent&#x27;: xxx</span><br><span class="line">&#125;</span><br><span class="line">#获取信息并开始解析</span><br><span class="line">xxx = requests.get(xxx_url, header = headers)</span><br><span class="line">bs = Beautiful(xxx.text, &#x27;html.parser&#x27;)</span><br></pre></td></tr></table></figure>
+            <h1 id="爬虫简易教程"><a href="#爬虫简易教程" class="headerlink" title="爬虫简易教程"></a>爬虫简易教程</h1><h2 id="基础模块的导入"><a href="#基础模块的导入" class="headerlink" title="基础模块的导入"></a>基础模块的导入</h2><pre><code>import requests
+from bs4 import BeautifulSoup
+</code></pre>
+<h2 id="请求并解析即将爬取的网页"><a href="#请求并解析即将爬取的网页" class="headerlink" title="请求并解析即将爬取的网页"></a>请求并解析即将爬取的网页</h2><pre><code>xxx_url =&#39;&#39;
+headers = &#123;
+&quot;&#39;你在登录信息中php文件中查看到的headers信息，一般在最后一行，格式如下&#39;&quot;
+&#39;User-Agent&#39;: xxx
+&#125;
+#获取信息并开始解析
+xxx = requests.get(xxx_url, header = headers)
+bs = Beautiful(xxx.text, &#39;html.parser&#39;)
+</code></pre>
 <blockquote>
 <p>以上的.text是进行文本化的解析，后面’html.parser’对解析器进行一个选择</p>
 </blockquote>
 <h2 id="如何获取Cookies消息"><a href="#如何获取Cookies消息" class="headerlink" title="如何获取Cookies消息"></a>如何获取Cookies消息</h2><p>对页面进行审查后，我们可以在登录信息的payload区找到如下一串</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">log: username</span><br><span class="line">pwd: password</span><br><span class="line">wp-submit:&quot;&quot;</span><br><span class="line">redirect_to:&quot;&quot;</span><br><span class="line">testcokkie:&quot;&quot;</span><br></pre></td></tr></table></figure>
+<pre><code>log: username
+pwd: password
+wp-submit:&quot;&quot;
+redirect_to:&quot;&quot;
+testcokkie:&quot;&quot;
+</code></pre>
 <p>这个会成为我们爬取网站的请求体数据。<del>我们的用户名和密码还是在命令行中输入</del></p>
 <p>请求登录的时候我们携带请求体对网站进行post请求</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">login = requests.post(url, headers=headers, data=data)</span><br><span class="line">print(login.cookies)</span><br></pre></td></tr></table></figure>
-
+<pre><code>login = requests.post(url, headers=headers, data=data)
+print(login.cookies)
+</code></pre>
 <h2 id="发送评论"><a href="#发送评论" class="headerlink" title="发送评论"></a>发送评论</h2><p>我们可以先在审查元素中找到，评论的表单<br>寻找请求网站和请求体表单</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cookies = login.cookies</span><br><span class="line">comment = requests.post(url, headers = headers,data = data_comment,cookies = cookies)</span><br><span class="line">print(comment.status_code)</span><br></pre></td></tr></table></figure>
+<pre><code>cookies = login.cookies
+comment = requests.post(url, headers = headers,data = data_comment,cookies = cookies)
+print(comment.status_code)
+</code></pre>
 <p>打印状态码是我们了解程序结果重要的一部分</p>
 <blockquote>
 <p>这里的cookies的引用方法，也保证了我们的程序对于another也是适用的</p>
 </blockquote>
 <h1 id="重要的字符串操作"><a href="#重要的字符串操作" class="headerlink" title="重要的字符串操作"></a>重要的字符串操作</h1><h2 id="strip"><a href="#strip" class="headerlink" title="strip"></a>strip</h2><p>简单的去除空格操作</p>
-<h2 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">replace(&#x27;&#x27;,&#x27;&#x27;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="split函数"><a href="#split函数" class="headerlink" title="split函数"></a>split函数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data = &#x27;2022/11/1&#x27;</span><br><span class="line">data = data.split(&#x27;/&#x27;)</span><br></pre></td></tr></table></figure>
-
+<h2 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h2><pre><code>replace(&#39;&#39;,&#39;&#39;)
+</code></pre>
+<h2 id="split函数"><a href="#split函数" class="headerlink" title="split函数"></a>split函数</h2><pre><code>data = &#39;2022/11/1&#39;
+data = data.split(&#39;/&#39;)
+</code></pre>
 <h2 id="startswith以及endswith"><a href="#startswith以及endswith" class="headerlink" title="startswith以及endswith"></a>startswith以及endswith</h2><p>这串函数可以判断语句的开头和结尾</p>
-<h2 id="join"><a href="#join" class="headerlink" title="join"></a>join</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xxx = &#x27;-&#x27;.join(xxx)</span><br></pre></td></tr></table></figure>
+<h2 id="join"><a href="#join" class="headerlink" title="join"></a>join</h2><pre><code>xxx = &#39;-&#39;.join(xxx)
+</code></pre>
 <p>将列表中的各个元素用-连接</p>
 <h2 id="set集合函数去重"><a href="#set集合函数去重" class="headerlink" title="set集合函数去重"></a>set集合函数去重</h2><p>就数学里的集合，不做多解释</p>
 

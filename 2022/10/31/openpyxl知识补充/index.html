@@ -10,7 +10,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Ltuka,"> 
-    <meta name="description" content="openpyxl库与模块导入load_workbook与Workbook12345load_workbook(filename)Workbook()name.save(&amp;#x27;&amp;#x27;)# ,"> 
+    <meta name="description" content="openpyxl库与模块导入load_workbook与Workbookload_workbook(filename)
+Workbook()
+name.save(&amp;#39;&amp;#39;)
+# 获取活动,"> 
     <meta name="author" content="sugar_chuan"> 
     <link rel="alternative" href="atom.xml" title="雎川" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -19,7 +22,10 @@
     
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:title" content="openpyxl知识补充 - 雎川"/>
-    <meta name="twitter:description" content="openpyxl库与模块导入load_workbook与Workbook12345load_workbook(filename)Workbook()name.save(&amp;#x27;&amp;#x27;)# ,"/>
+    <meta name="twitter:description" content="openpyxl库与模块导入load_workbook与Workbookload_workbook(filename)
+Workbook()
+name.save(&amp;#39;&amp;#39;)
+# 获取活动,"/>
     
     
     
@@ -27,7 +33,10 @@
     <meta property="og:site_name" content="雎川"/>
     <meta property="og:type" content="object"/>
     <meta property="og:title" content="openpyxl知识补充 - 雎川"/>
-    <meta property="og:description" content="openpyxl库与模块导入load_workbook与Workbook12345load_workbook(filename)Workbook()name.save(&amp;#x27;&amp;#x27;)# ,"/>
+    <meta property="og:description" content="openpyxl库与模块导入load_workbook与Workbookload_workbook(filename)
+Workbook()
+name.save(&amp;#39;&amp;#39;)
+# 获取活动,"/>
     
 <link rel="stylesheet" href="/css/diaspora.css">
 
@@ -69,13 +78,19 @@
 
         </div>
         <div class="content markdown">
-            <h1 id="openpyxl库与模块导入"><a href="#openpyxl库与模块导入" class="headerlink" title="openpyxl库与模块导入"></a>openpyxl库与模块导入</h1><h2 id="load-workbook与Workbook"><a href="#load-workbook与Workbook" class="headerlink" title="load_workbook与Workbook"></a>load_workbook与Workbook</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">load_workbook(filename)</span><br><span class="line">Workbook()</span><br><span class="line">name.save(&#x27;&#x27;)</span><br><span class="line"># 获取活动工作表</span><br><span class="line">name.active</span><br></pre></td></tr></table></figure>
+            <h1 id="openpyxl库与模块导入"><a href="#openpyxl库与模块导入" class="headerlink" title="openpyxl库与模块导入"></a>openpyxl库与模块导入</h1><h2 id="load-workbook与Workbook"><a href="#load-workbook与Workbook" class="headerlink" title="load_workbook与Workbook"></a>load_workbook与Workbook</h2><pre><code>load_workbook(filename)
+Workbook()
+name.save(&#39;&#39;)
+# 获取活动工作表
+name.active
+</code></pre>
 <blockquote>
 <p>建议单一工作表使用.active来获取活动表对象</p>
 <p>存有多张活动表的时候用[]来获取指定的对象</p>
 </blockquote>
 <h2 id="解析工作表数据"><a href="#解析工作表数据" class="headerlink" title="解析工作表数据"></a>解析工作表数据</h2><h3 id="iter-rows"><a href="#iter-rows" class="headerlink" title="iter_rows()"></a>iter_rows()</h3><p>利用iter_rows（）来得到表格中指定范围的多行数据</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for row in 工作表对象.iter_rows(min_row=,max_row=,min_col=,max_col=,values_only=False)</span><br></pre></td></tr></table></figure>
+<pre><code>for row in 工作表对象.iter_rows(min_row=,max_row=,min_col=,max_col=,values_only=False)
+</code></pre>
 <p>参数values_only决定返回值，如果是True则返回单元格的值，如果为False则返回单元格对象。<br>写入数据时候保持默认的False，只读时候使用True。<br>（这里也很明显阐述了布尔值在这里的影响)</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->

@@ -12,7 +12,9 @@
     <meta name="keywords" content="Ltuka,"> 
     <meta name="description" content="更新完插件hexo -d部署失败在发现spawn failed错误了，删除.deploy_git文件重新部署，仍报错
 其次更改配置文件，修改其中的repo
-12345# Deploymentdepl,"> 
+# Deployment
+deploy:
+,"> 
     <meta name="author" content="sugar_chuan"> 
     <link rel="alternative" href="atom.xml" title="雎川" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -23,7 +25,9 @@
     <meta name="twitter:title" content="hexo部署过程中遇到的一些问题 - 雎川"/>
     <meta name="twitter:description" content="更新完插件hexo -d部署失败在发现spawn failed错误了，删除.deploy_git文件重新部署，仍报错
 其次更改配置文件，修改其中的repo
-12345# Deploymentdepl,"/>
+# Deployment
+deploy:
+,"/>
     
     
     
@@ -33,7 +37,9 @@
     <meta property="og:title" content="hexo部署过程中遇到的一些问题 - 雎川"/>
     <meta property="og:description" content="更新完插件hexo -d部署失败在发现spawn failed错误了，删除.deploy_git文件重新部署，仍报错
 其次更改配置文件，修改其中的repo
-12345# Deploymentdepl,"/>
+# Deployment
+deploy:
+,"/>
     
 <link rel="stylesheet" href="/css/diaspora.css">
 
@@ -77,8 +83,12 @@
         <div class="content markdown">
             <h2 id="更新完插件hexo-d部署失败"><a href="#更新完插件hexo-d部署失败" class="headerlink" title="更新完插件hexo -d部署失败"></a>更新完插件hexo -d部署失败</h2><p>在发现spawn failed错误了，删除.deploy_git文件<br>重新部署，仍报错</p>
 <p>其次更改配置文件，修改其中的repo</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repo: git@github.com:YourName/YourName.github.io.git</span><br><span class="line">	branch: main</span><br></pre></td></tr></table></figure>
-
+<pre><code># Deployment
+deploy:
+    type: git
+    repo: git@github.com:YourName/YourName.github.io.git
+    branch: main
+</code></pre>
 <p>（近期不用地址类型的repo，branch现在用main可以少出很多错）</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
