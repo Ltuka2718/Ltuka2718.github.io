@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>爬虫简易教程 - 雎川</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Ltuka,"> 
+    <meta name="description" content="爬虫简易教程基础模块的导入12import requestsfrom bs4 import BeautifulSoup
+
+请求并解析即将爬取的网页12345678xxx_url =&amp;#x27;&amp;#x,"> 
+    <meta name="author" content="sugar_chuan"> 
+    <link rel="alternative" href="atom.xml" title="雎川" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="爬虫简易教程 - 雎川"/>
+    <meta name="twitter:description" content="爬虫简易教程基础模块的导入12import requestsfrom bs4 import BeautifulSoup
+
+请求并解析即将爬取的网页12345678xxx_url =&amp;#x27;&amp;#x,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="雎川"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="爬虫简易教程 - 雎川"/>
+    <meta property="og:description" content="爬虫简易教程基础模块的导入12import requestsfrom bs4 import BeautifulSoup
+
+请求并解析即将爬取的网页12345678xxx_url =&amp;#x27;&amp;#x,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">雎川</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">爬虫简易教程</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">爬虫简易教程</h1>
+        <div class="stuff">
+            <span>十月 28, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/web/" rel="tag">web</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="爬虫简易教程"><a href="#爬虫简易教程" class="headerlink" title="爬虫简易教程"></a>爬虫简易教程</h1><h2 id="基础模块的导入"><a href="#基础模块的导入" class="headerlink" title="基础模块的导入"></a>基础模块的导入</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br></pre></td></tr></table></figure>
+
+<h2 id="请求并解析即将爬取的网页"><a href="#请求并解析即将爬取的网页" class="headerlink" title="请求并解析即将爬取的网页"></a>请求并解析即将爬取的网页</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">xxx_url =&#x27;&#x27;</span><br><span class="line">headers = &#123;</span><br><span class="line">&quot;&#x27;你在登录信息中php文件中查看到的headers信息，一般在最后一行，格式如下&#x27;&quot;</span><br><span class="line">&#x27;User-Agent&#x27;: xxx</span><br><span class="line">&#125;</span><br><span class="line">#获取信息并开始解析</span><br><span class="line">xxx = requests.get(xxx_url, header = headers)</span><br><span class="line">bs = Beautiful(xxx.text, &#x27;html.parser&#x27;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>以上的.text是进行文本化的解析，后面’html.parser’对解析器进行一个选择</p>
+</blockquote>
+<h2 id="如何获取Cookies消息"><a href="#如何获取Cookies消息" class="headerlink" title="如何获取Cookies消息"></a>如何获取Cookies消息</h2><p>对页面进行审查后，我们可以在登录信息的payload区找到如下一串</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">log: username</span><br><span class="line">pwd: password</span><br><span class="line">wp-submit:&quot;&quot;</span><br><span class="line">redirect_to:&quot;&quot;</span><br><span class="line">testcokkie:&quot;&quot;</span><br></pre></td></tr></table></figure>
+<p>这个会成为我们爬取网站的请求体数据。<del>我们的用户名和密码还是在命令行中输入</del></p>
+<p>请求登录的时候我们携带请求体对网站进行post请求</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">login = requests.post(url, headers=headers, data=data)</span><br><span class="line">print(login.cookies)</span><br></pre></td></tr></table></figure>
+
+<h2 id="发送评论"><a href="#发送评论" class="headerlink" title="发送评论"></a>发送评论</h2><p>我们可以先在审查元素中找到，评论的表单<br>寻找请求网站和请求体表单</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cookies = login.cookies</span><br><span class="line">comment = requests.post(url, headers = headers,data = data_comment,cookies = cookies)</span><br><span class="line">print(comment.status_code)</span><br></pre></td></tr></table></figure>
+<p>打印状态码是我们了解程序结果重要的一部分</p>
+<blockquote>
+<p>这里的cookies的引用方法，也保证了我们的程序对于another也是适用的</p>
+</blockquote>
+<h1 id="重要的字符串操作"><a href="#重要的字符串操作" class="headerlink" title="重要的字符串操作"></a>重要的字符串操作</h1><h2 id="strip"><a href="#strip" class="headerlink" title="strip"></a>strip</h2><p>简单的去除空格操作</p>
+<h2 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">replace(&#x27;&#x27;,&#x27;&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="split函数"><a href="#split函数" class="headerlink" title="split函数"></a>split函数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data = &#x27;2022/11/1&#x27;</span><br><span class="line">data = data.split(&#x27;/&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="startswith以及endswith"><a href="#startswith以及endswith" class="headerlink" title="startswith以及endswith"></a>startswith以及endswith</h2><p>这串函数可以判断语句的开头和结尾</p>
+<h2 id="join"><a href="#join" class="headerlink" title="join"></a>join</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xxx = &#x27;-&#x27;.join(xxx)</span><br></pre></td></tr></table></figure>
+<p>将列表中的各个元素用-连接</p>
+<h2 id="set集合函数去重"><a href="#set集合函数去重" class="headerlink" title="set集合函数去重"></a>set集合函数去重</h2><p>就数学里的集合，不做多解释</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="true"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class="side">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%88%AC%E8%99%AB%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">爬虫简易教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A8%A1%E5%9D%97%E7%9A%84%E5%AF%BC%E5%85%A5"><span class="toc-number">1.1.</span> <span class="toc-text">基础模块的导入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E5%B9%B6%E8%A7%A3%E6%9E%90%E5%8D%B3%E5%B0%86%E7%88%AC%E5%8F%96%E7%9A%84%E7%BD%91%E9%A1%B5"><span class="toc-number">1.2.</span> <span class="toc-text">请求并解析即将爬取的网页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96Cookies%E6%B6%88%E6%81%AF"><span class="toc-number">1.3.</span> <span class="toc-text">如何获取Cookies消息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E9%80%81%E8%AF%84%E8%AE%BA"><span class="toc-number">1.4.</span> <span class="toc-text">发送评论</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">重要的字符串操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#strip"><span class="toc-number">2.1.</span> <span class="toc-text">strip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#replace"><span class="toc-number">2.2.</span> <span class="toc-text">replace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#split%E5%87%BD%E6%95%B0"><span class="toc-number">2.3.</span> <span class="toc-text">split函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#startswith%E4%BB%A5%E5%8F%8Aendswith"><span class="toc-number">2.4.</span> <span class="toc-text">startswith以及endswith</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#join"><span class="toc-number">2.5.</span> <span class="toc-text">join</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#set%E9%9B%86%E5%90%88%E5%87%BD%E6%95%B0%E5%8E%BB%E9%87%8D"><span class="toc-number">2.6.</span> <span class="toc-text">set集合函数去重</span></a></li></ol></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+
+</html>
