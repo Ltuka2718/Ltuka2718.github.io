@@ -150,9 +150,12 @@ name.active
       </tags>
   </entry>
   <entry>
-    <title>微生物的新陈代谢</title>
+    <title></title>
     <url>/2022/11/04/%E5%BE%AE%E7%94%9F%E7%89%A9%E7%9A%84%E6%96%B0%E9%99%88%E4%BB%A3%E8%B0%A2/</url>
-    <content><![CDATA[<h1 id="第一节-微生物的能量代谢"><a href="#第一节-微生物的能量代谢" class="headerlink" title="第一节 微生物的能量代谢"></a>第一节 微生物的能量代谢</h1><h2 id="代谢的概念"><a href="#代谢的概念" class="headerlink" title="代谢的概念"></a>代谢的概念</h2><p>细胞内发生的各种生物化学反应的总称，代谢分为<em>分解代谢</em>（catabolism）和<em>合成代谢</em>（anabolism）两种。</p>
+    <content><![CDATA[<hr>
+<p>title: 微生物的新陈代谢<br>date: 2022-11-04 15:31:52<br>tags: micro</p>
+<hr>
+<h1 id="第一节-微生物的能量代谢"><a href="#第一节-微生物的能量代谢" class="headerlink" title="第一节 微生物的能量代谢"></a>第一节 微生物的能量代谢</h1><h2 id="代谢的概念"><a href="#代谢的概念" class="headerlink" title="代谢的概念"></a>代谢的概念</h2><p>细胞内发生的各种生物化学反应的总称，代谢分为<em>分解代谢</em>（catabolism）和<em>合成代谢</em>（anabolism）两种。</p>
 <h2 id="1-ATP的生成方式"><a href="#1-ATP的生成方式" class="headerlink" title="1.ATP的生成方式"></a>1.ATP的生成方式</h2><blockquote>
 <p>能量代谢的中心任务，是生物体如何把外界环境中的多种形式的最初能源转换为对一切生命活动都能使用的通用能源—–ATP。<em>这就是产能代谢</em></p>
 </blockquote>
@@ -215,7 +218,7 @@ name.active
 <td>产物主要为甘油</td>
 </tr>
 </tbody></table>
-<p>酵母I型<del>酒精</del>发酵：<strong>丙酮酸脱羟酶</strong>是酵母酒精发酵的关键酶<br>乙醛具有让毛细血管扩张的功能，联不毛细血管的扩张导致脸红。<br>酵母II型发酵：当环境中存在亚硫酸氢钠时，亚硫酸氢钠可与乙醛反应，生成难溶的磺化羟基乙醛，<em>该化合物失去了作为受氢体使NADH脱氢氧化的功能，而不能形成乙醇，转而使磷酸二羟丙酮替代乙醛作为受氢体，生成a-磷酸甘油，a-磷酸甘油进一步水解脱磷酸生成甘油</em>。<u>这是利用酵母菌工业化生产甘油的“经典”途径。</u></p>
+<p>酵母I型<del>酒精</del>发酵：<strong>丙酮酸脱羟酶</strong>是酵母酒精发酵的关键酶<br>乙醛具有让毛细血管扩张的功能，脸部毛细血管的扩张导致脸红。<br>酵母II型发酵：当环境中存在亚硫酸氢钠时，亚硫酸氢钠可与乙醛反应，生成难溶的磺化羟基乙醛，<em>该化合物失去了作为受氢体使NADH脱氢氧化的功能，而不能形成乙醇，转而使磷酸二羟丙酮替代乙醛作为受氢体，生成a-磷酸甘油，a-磷酸甘油进一步水解脱磷酸生成甘油</em>。<u>这是利用酵母菌工业化生产甘油的“经典”途径。</u></p>
 <hr>
 <h5 id="细菌的酒精发酵"><a href="#细菌的酒精发酵" class="headerlink" title="细菌的酒精发酵"></a>细菌的酒精发酵</h5><p>有些细菌也能将糖转化为乙醇和$CO_2$，形成乙醇发酵，但其发酵途径各异。<br>目前发现的细菌酒精发酵途径主要是：</p>
 <ol>
@@ -256,10 +259,40 @@ name.active
 <p>如果作为电子供体的无机物的氧化还原电位足够低，也在氧化磷酸化的过程中产生还原力，但大多数情况下都需要通过电子的逆向传递，以消耗ATP为代价获得还原力。</p>
 </blockquote>
 <h3 id="氨的氧化"><a href="#氨的氧化" class="headerlink" title="氨的氧化"></a>氨的氧化</h3><p>$NH_3$亚硝酸（$NO_2^-$）</p>
+<table>
+<thead>
+<tr>
+<th>亚硝化细菌</th>
+<th>硝化细菌</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>将氮氧化为亚硝酸并获得能量</td>
+<td>将亚硝酸氧化为硝酸并获得能量</td>
+</tr>
+<tr>
+<td><strong>这两类细菌往往伴生在一起</strong>，在它们的共同作用下将铵盐氧化成硝酸盐，避免亚硝酸积累所产生的毒害作用</td>
+<td></td>
+</tr>
+<tr>
+<td><em>这里细菌在自然界的氮素循环中起着重要的作用，在自然界中分布非常广泛</em></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="硫的氧化"><a href="#硫的氧化" class="headerlink" title="硫的氧化"></a>硫的氧化</h3><blockquote>
+<p>硫细菌能够利用一种或多种还原态或部分还原态的硫化合物（包括硫化物、元素硫）作能源<br>硫细菌进行还原态硫物质氧化时会产酸<br><strong>和硝化细菌一样，硫细菌也是通过电子的逆呼吸链传递来生成还原力</strong></p>
+</blockquote>
+<ul>
+<li>通过氧化磷酸化途径产生ATP（主要途径）</li>
+<li>底物水平磷酸化途径产生ATP（非主要途径）</li>
+</ul>
+<h3 id="铁的氧化"><a href="#铁的氧化" class="headerlink" title="铁的氧化"></a>铁的氧化</h3><p><strong>嗜酸性的氧化亚铁硫杆菌</strong><br>$Fe^{2+}$&gt;&gt;$Fe^{3+}$</p>
+<blockquote>
+<p>封闭矿山防治其大量繁殖，使环境恢复到原来的无氧状态</p>
+</blockquote>
+<h2 id="氢的氧化"><a href="#氢的氧化" class="headerlink" title="氢的氧化"></a>氢的氧化</h2><p><strong>氢是微生物细胞代谢中的常见代谢产物，很多细菌能通过对氢气的氧化获得生长所需要的能量</strong></p>
+<p>氢的氧化可通过电子和氢离子在呼吸链上的传递产生ATP和用于<strong>细胞合成代谢</strong>所需要的还原力</p>
 <h1 id="第二节-微生物的次级代谢"><a href="#第二节-微生物的次级代谢" class="headerlink" title="第二节 微生物的次级代谢"></a>第二节 微生物的次级代谢</h1>]]></content>
-      <tags>
-        <tag>micro</tag>
-      </tags>
   </entry>
   <entry>
     <title>爬虫简易教程</title>
