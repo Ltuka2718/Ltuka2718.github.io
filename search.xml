@@ -508,7 +508,76 @@ content = img_tag.screenshot_as_png
   </entry>
   <entry>
     <title>微生物的生长及其控制</title>
-    <url>/2022/11/16/%E5%BE%AE%E7%94%9F%E7%89%A9%E7%9A%84%E7%94%9F%E9%95%BF%E5%8F%8A%E5%85%B6%E6%8E%A7%E5%88%B6/</url>
+    <url>/2022/11/04/%E5%BE%AE%E7%94%9F%E7%89%A9%E7%9A%84%E7%94%9F%E9%95%BF%E5%8F%8A%E5%85%B6%E6%8E%A7%E5%88%B6/</url>
+    <content><![CDATA[<h1 id="微生物生长的测定"><a href="#微生物生长的测定" class="headerlink" title="微生物生长的测定"></a>微生物生长的测定</h1><blockquote>
+<p><strong>个体生长</strong>：生物个体物质有规律地、不可逆增加，导致个体体积扩大的生物学过程<br><strong>繁殖</strong>：生物个体生长到一定阶段，通过特定方式产生新的生命个体，即引起生命个体数量增加的生物学过程</p>
+</blockquote>
+<p>生长是一个逐步发生的量变过程，繁殖是一个产生新的生命个体的质变过程。</p>
+<pre><code class="mermaid">graph TD
+A[一个微生物细胞] --&gt; B[合适的外界条件,吸收营养物质,进行代谢]
+B --&gt; |如果同化作用的速度超过了异化作用|C[个体的生长:原生质的总量就不断增加]
+C --&gt;|如果各细胞组分是按恰当的比例增长时,则达到一定程度后就会发生繁殖,引起个体树目的增加| D[群体内各个个体的进一步生长]
+D --&gt;E[(群体的生长)]
+</code></pre>
+<blockquote>
+<p>总量：指重量、体积、大小<br><strong>微生物的生长通常指群体生长</strong>：单位时间里微生物数量或生物量的变化</p>
+</blockquote>
+<ul>
+<li>个体计数</li>
+<li>群体重量测定</li>
+<li>群体生理指标测定</li>
+</ul>
+<h2 id="以数量变化对微生物生长情况进行测定"><a href="#以数量变化对微生物生长情况进行测定" class="headerlink" title="以数量变化对微生物生长情况进行测定"></a>以数量变化对微生物生长情况进行测定</h2><p>通常用来测定细菌、酵母菌等单细胞微生物的生长情况或样品中所含微生物个体的数量（细菌、孢子、酵母菌）</p>
+<h3 id="培养平板计数法"><a href="#培养平板计数法" class="headerlink" title="培养平板计数法"></a>培养平板计数法</h3><blockquote>
+<p>伟大的平皿，计数太偏</p>
+</blockquote>
+<h3 id="膜过滤培养法"><a href="#膜过滤培养法" class="headerlink" title="膜过滤培养法"></a>膜过滤培养法</h3><h1 id="细菌的群体生长繁殖"><a href="#细菌的群体生长繁殖" class="headerlink" title="细菌的群体生长繁殖"></a>细菌的群体生长繁殖</h1><p>迟缓期——指数期——稳定期——衰亡期</p>
+<h2 id="连续培养"><a href="#连续培养" class="headerlink" title="连续培养"></a>连续培养</h2><blockquote>
+<p>联系到k/2</p>
+</blockquote>
+<ul>
+<li>恒浊连续培养：不断调节流速而使细菌培养液浊度保持恒定</li>
+<li>恒化连续培养：保持恒定的流速</li>
+</ul>
+<h1 id="微生物生长繁殖的控制"><a href="#微生物生长繁殖的控制" class="headerlink" title="微生物生长繁殖的控制"></a>微生物生长繁殖的控制</h1><h2 id="控制微生物的化学物质"><a href="#控制微生物的化学物质" class="headerlink" title="控制微生物的化学物质"></a>控制微生物的化学物质</h2><h3 id="防腐剂和消毒剂"><a href="#防腐剂和消毒剂" class="headerlink" title="防腐剂和消毒剂"></a>防腐剂和消毒剂</h3><blockquote>
+<p>对一切活细胞都有毒性，不能用于人或动物体内的化学治疗</p>
+</blockquote>
+<ul>
+<li>消毒剂：可杀死微生物，通常用于生物材料的表面处理以及非生物材料的表面或内部处理</li>
+<li>防腐剂：能杀死微生物或抑制其生长，一般情况下对人及动物的毒性较低，常用于以防止微生物的生长</li>
+<li><em>食品防腐剂</em>：<em>是用于以保持食品原有品质和营养价值为目的的食品添加剂，它能抑制微生物活动、防止食品腐败变质从而延长保质期。</em><blockquote>
+<p>各种抗微生物化学制剂杀菌能力的比较标准：<br>  <strong>在临床最早使用的消毒剂——石炭酸</strong></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="抗代谢物"><a href="#抗代谢物" class="headerlink" title="抗代谢物"></a>抗代谢物</h3><p><strong>磺胺制剂</strong></p>
+<h3 id="抗生素"><a href="#抗生素" class="headerlink" title="抗生素"></a>抗生素</h3><blockquote>
+<p>是由某些生物合成或半合成的一类<strong>次级代谢产物或衍生物</strong>，它们在很低浓度时就能抑制或影响它种生物的生命活动，如杀死微生物或抑制其生长。</p>
+</blockquote>
+<h4 id="抑制蛋白质合成"><a href="#抑制蛋白质合成" class="headerlink" title="抑制蛋白质合成"></a>抑制蛋白质合成</h4><blockquote>
+<p>S来自沉降系数，30S和50S亚基组成70S（细菌的核蛋白体），40S和60S亚基组成80S（哺乳（真核）细胞核蛋白体）</p>
+</blockquote>
+<p>有分别结合30S和50S亚基的各种抗生素</p>
+<h4 id="细菌抗药性的产生"><a href="#细菌抗药性的产生" class="headerlink" title="细菌抗药性的产生"></a>细菌抗药性的产生</h4><p>细菌耐药性产生的机制：</p>
+<ul>
+<li>细菌质膜通透性改变，使抗生素不能进入细胞</li>
+<li>药物作用靶细改变</li>
+<li>合成了灭活抗生素的酶(<em>水解酶</em>：<em>β-内酰胺酶，可将青霉素类和头孢菌素类药物分子结构中的β-内酰胺环打开使药物失效</em>）</li>
+<li>主动转运泵作用，一些耐药细菌具有主动转运泵，可将进入细菌体内的药物泵出体外，这是获得性耐药的重要机制之一</li>
+<li>细菌改变代谢途径<blockquote>
+<p>（通透性，靶，灭活酶，主动运输，代谢途径）</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="控制微生物的物理因素"><a href="#控制微生物的物理因素" class="headerlink" title="控制微生物的物理因素"></a>控制微生物的物理因素</h2><h3 id="温度"><a href="#温度" class="headerlink" title="温度"></a>温度</h3><p>杀灭/抑制</p>
+<h1 id="菌种的退化、复壮与保藏"><a href="#菌种的退化、复壮与保藏" class="headerlink" title="菌种的退化、复壮与保藏"></a>菌种的退化、复壮与保藏</h1>]]></content>
+      <tags>
+        <tag>micro</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>积分推广部分学习</title>
+    <url>/2022/11/17/%E7%A7%AF%E5%88%86%E6%8E%A8%E5%B9%BF%E9%83%A8%E5%88%86%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
