@@ -282,7 +282,15 @@ name.active
 </blockquote>
 <h2 id="氢的氧化"><a href="#氢的氧化" class="headerlink" title="氢的氧化"></a>氢的氧化</h2><p><strong>氢是微生物细胞代谢中的常见代谢产物，很多细菌能通过对氢气的氧化获得生长所需要的能量</strong></p>
 <p>氢的氧化可通过电子和氢离子在呼吸链上的传递产生ATP和用于<strong>细胞合成代谢</strong>所需要的还原力</p>
-<h1 id="第二节-微生物的次级代谢"><a href="#第二节-微生物的次级代谢" class="headerlink" title="第二节 微生物的次级代谢"></a>第二节 微生物的次级代谢</h1>]]></content>
+<h1 id="第二节-微生物的次级代谢"><a href="#第二节-微生物的次级代谢" class="headerlink" title="第二节 微生物的次级代谢"></a>第二节 微生物的次级代谢</h1><h2 id="次级代谢与次级代谢产物"><a href="#次级代谢与次级代谢产物" class="headerlink" title="次级代谢与次级代谢产物"></a>次级代谢与次级代谢产物</h2><blockquote>
+<p>初级代谢：一类与生物生存有关的、涉及到产能代谢和耗能代谢类型，普遍存在于一切生物中</p>
+</blockquote>
+<p>初级代谢：<strong>微生物从外界吸收各种营养物质，通过分解代谢和合成代谢，生成维持生命活动所必需的物质和能量的过程</strong></p>
+<p>次级代谢：<strong>某些生物为了避免在初级代谢过程某种中间产物积累所造成的不利作用或为了获得生存优势而进行的代谢类型</strong><br>通过次级代谢合成的产物通常称为次级代谢产物，大多是分子结构比较复杂的化合物。根据其作用，可将其分为抗生素、激素、生物碱、毒素及维生素等类型</p>
+<h3 id="存在范围及产物类型不同"><a href="#存在范围及产物类型不同" class="headerlink" title="存在范围及产物类型不同"></a>存在范围及产物类型不同</h3><blockquote>
+<p>像病毒这种非细胞生物虽然不具备完整的初级代谢系统，但它们仍具有部分的初级代谢系统和具有利用宿主代谢系统完成本身的初级代谢过程能力。</p>
+</blockquote>
+]]></content>
       <tags>
         <tag>micro</tag>
       </tags>
@@ -431,7 +439,17 @@ content = img_tag.screenshot_as_png
   <entry>
     <title>蛋白质功能</title>
     <url>/2022/11/08/%E8%9B%8B%E7%99%BD%E8%B4%A8%E5%8A%9F%E8%83%BD/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="蛋白质功能"><a href="#蛋白质功能" class="headerlink" title="蛋白质功能"></a>蛋白质功能</h1><blockquote>
+<p>与蛋白质发生可你结合的分子叫配体(ligand)<br>酶作用的分子被称为<strong>反应底物</strong>而非配体，其作用位点称为<strong>催化部位</strong>或<strong>活性部位</strong>。</p>
+</blockquote>
+<h2 id="蛋白质与配体的可逆结合：氧结合蛋白"><a href="#蛋白质与配体的可逆结合：氧结合蛋白" class="headerlink" title="蛋白质与配体的可逆结合：氧结合蛋白"></a>蛋白质与配体的可逆结合：氧结合蛋白</h2><h3 id="氧可以与血红素辅基结合"><a href="#氧可以与血红素辅基结合" class="headerlink" title="氧可以与血红素辅基结合"></a>氧可以与血红素辅基结合</h3><blockquote>
+<p>由于胶体溶液中，氧的溶解性极差。可是某些金属元素适合与氧进行可逆结合，例如铁通常整合在含<strong>血红素</strong>辅基的蛋白质中。</p>
+</blockquote>
+<p>血红素由一个复杂的原卟啉有机环状结构组成，并结合一个亚铁离子，亚铁离子有6个配位键，4个与卟啉环的氮原子结合，另外2个与卟啉环垂直。<br><strong>配体的4个氮原子有助于抑制血红素铁原子转变为三价态</strong>（亚铁可以可逆结合氧，三价铁则不能）<br>铁离子的两个开放配位键</p>
+]]></content>
+      <tags>
+        <tag>biochemical</tag>
+      </tags>
   </entry>
   <entry>
     <title>英文workshop</title>
