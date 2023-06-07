@@ -651,4 +651,47 @@ content = img_tag.screenshot_as_png
     <url>/2022/12/01/%E7%89%A9%E7%90%86%E5%8C%96%E5%AD%A6/</url>
     <content><![CDATA[]]></content>
   </entry>
+  <entry>
+    <title>Ncbi爬取实战</title>
+    <url>/2023/03/21/Ncbi%E7%88%AC%E5%8F%96%E5%AE%9E%E6%88%98/</url>
+    <content><![CDATA[<h1 id="观察网站"><a href="#观察网站" class="headerlink" title="观察网站"></a>观察网站</h1><pre><code>动手处理检查网页的Robots协议，以及目标的相应内容。暂时来看爬取相关内容下载似乎不违反相关协议
+</code></pre>
+<h2 id="网址类型"><a href="#网址类型" class="headerlink" title="网址类型"></a>网址类型</h2><p>检查搜索页面的params文件，跟常见网页的query不同<br>以Zostera marina</p>
+<pre><code># 全体搜索的网址
+https://www.ncbi.nlm.nih.gov/search/all/?term=Zostera+marina
+# 搜索protein网址
+https://www.ncbi.nlm.nih.gov/protein/?term=Zostera%20marina
+</code></pre>
+<p>思路：<br>params数据共由db和terms两部分组成<br>db直接被网页汇总成相关表格<br>terms即为搜索目标</p>
+<pre><code>https://www.ncbi.nlm.nih.gov/protein/?term=Zostera%20marina%EF%BC%8C%20Nitrate%20reductase
+</code></pre>
+<p>观察目标网址<br>组装关键词位置</p>
+<h1 id="爬取单个网址的数据"><a href="#爬取单个网址的数据" class="headerlink" title="爬取单个网址的数据"></a>爬取单个网址的数据</h1><p>以<strong><a href="https://www.ncbi.nlm.nih.gov/protein/KMZ57597.1">https://www.ncbi.nlm.nih.gov/protein/KMZ57597.1</a></strong>为例子</p>
+<pre><code>&lt;a class=&quot;dblinks&quot; ref=&quot;ordinalpos=1&amp;amp;ncbi_uid=901794371&amp;amp;link_uid=901794371&amp;amp;linksrc=genpept_fasta&quot; href=&quot;/protein/KMZ57597.1?report=fasta&quot; name=&quot;EntrezSystem2.PEntrez.Protein.Sequence_ResultsPanel.SequenceViewer.Sequence_ViewerTitle.ReportShortCut&quot; id=&quot;ReportShortCut6&quot; sid=&quot;16&quot;&gt;FASTA&lt;/a&gt;
+</code></pre>
+<p>可知，对于/protein/KMZ57597.1?report=fasta即为我们所需的fasta数据</p>
+<h2 id="序列数据的获取"><a href="#序列数据的获取" class="headerlink" title="序列数据的获取"></a>序列数据的获取</h2><pre><code>&lt;div id=&quot;viewercontent1&quot; class=&quot;seq gbff&quot; val=&quot;901794371&quot; sequencesize=&quot;273817&quot; virtualsequence=&quot;true&quot; style=&quot;display: block;&quot;&gt;&lt;pre&gt;&amp;gt;KMZ57597.1 NADH:Nitrate Reductase [Zostera marina]
+MAILISERWHQQLLSAGKINEFRNLLLQIENDQFLGSKEEEEGEDGQNKMLQQRKKVVDDDINSIFDPRD
+EFTSDAWIRRNSSLIRLTGKHPFNCEPPLNTLMTNGFITPSHLHYVRNHGPVPKAVWDAWSVKVGDEDGA
+LVRRPSCFTMDQLITIFRSHEFPVTLVCAGNRRKEQNMVKQTVGFNWGSAGVSTAVWRGVRLRDVLKKCG
+VVDREGLHVWFEGEEDLPGGGGSKYGTSVALEVAMDPSRDIILAYMMNGDILPPDHGFPVRMIIPGFIGG
+RMVKWLRRIQVVNRESQNYYHFHDNRVLPSLVDSADMAKDQGWWYKPEYIINDLSVNSVITTPAHDEILP
+IDNPNTPTDYVIKGYAYSGRGNKVTRVEVTLDGGKTWMLCQLDHSEKPNRYGKYWCWCFWSLKLDILHLF
+GANEISVRAWDQSHNTQPEHLIWNLMGMMNNCWFRVKINPSRPKGGEIGFVFEHPTQPANDNGGWMTPPK
+KQIQLEDRNLKIIKNKTLSNSIAADNKHHYTISDVGKHNSLNSAWIVVHGNVYDCTDFVKDHPGGVDSIL
+INAGTDCTEEFDAIHSDKAKAMLDTYLIGRIDTETGVSLNELSSIKPQHVALVGREKVRCKLISKISISH
+DVRSFRFALPSNDQTLGLPVGKHIYVCADFAGKMCIRAYTPTSKVDKVGHFDLLVKIYQRGVDEKFPDGG
+LMSQHLDSLDIGKTVDVKGPLGHIEYTGCGNFSVHGKSRPQIKRLIMIAGGTGITPMYQLIQAILDDPQD
+GTEMWLIYANKTEDDILLMGELDQWARENERRFKVWYVINQAKREGWPYTVGFVTEDVLRDHVPACPGDN
+ETLVVACGPPPMIKFAVKPNMEKLGYNVEHSLLIF
+
+&lt;/pre&gt;&lt;/div&gt;
+</code></pre>
+<p><em>不太一样，这里的fasta文件为动态内容</em></p>
+<p>思考下爬取xhr还是想办法直接解析网页</p>
+]]></content>
+      <tags>
+        <tag>ncbi</tag>
+      </tags>
+  </entry>
 </search>
