@@ -28,8 +28,7 @@
 <td>期刊、报纸、专利</td>
 </tr>
 </tbody></table>
-<h3 id="检索式构建"><a href="#检索式构建" class="headerlink" title="检索式构建"></a>检索式构建</h3><p>AND : A并且B<br>OR : A或者B<br>AND NOT : A并不B</p>
-<p>常用检索表</p>
+<h3 id="检索式构建"><a href="#检索式构建" class="headerlink" title="检索式构建"></a>检索式构建</h3><p><strong>常用检索表</strong></p>
 <table>
 <thead>
 <tr>
@@ -79,6 +78,58 @@
 <td>强制作为一个词进行搜索</td>
 </tr>
 </tbody></table>
+<p><strong>检索式的构建</strong><br>TI = (橡胶树’ *’ miRNA’) - ‘抗逆’<br>表示在标题（TI）中同时出现橡胶树和miRNA两个搜索词，但不出现”抗逆”搜索词的结果</p>
 ]]></content>
+      <tags>
+        <tag>Bioinf</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Unix系统服务器基本操作</title>
+    <url>/2024/04/30/Unix%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>使用以下方法时，记得使用小的txt文件测试一下自己的方法有没有错误。</p>
+<h1 id="步骤一：登录服务器"><a href="#步骤一：登录服务器" class="headerlink" title="步骤一：登录服务器"></a>步骤一：登录服务器</h1><h2 id="1-打开终端或控制台应用程序"><a href="#1-打开终端或控制台应用程序" class="headerlink" title="1.打开终端或控制台应用程序"></a>1.打开终端或控制台应用程序</h2><p>Windows：cmd<br>Mac OS：iterm2（最优）</p>
+<h2 id="2-输入ssh命令"><a href="#2-输入ssh命令" class="headerlink" title="2.输入ssh命令"></a>2.输入ssh命令</h2><p>使用ssh命令：ssh <a href="mailto:&#117;&#x73;&#101;&#114;&#110;&#97;&#x6d;&#x65;&#64;&#120;&#120;&#x2e;&#120;&#120;&#46;&#120;&#120;&#46;&#120;&#120;">&#117;&#x73;&#101;&#114;&#110;&#97;&#x6d;&#x65;&#64;&#120;&#120;&#x2e;&#120;&#120;&#46;&#120;&#120;&#46;&#120;&#120;</a><br>以某个端口登陆 ssh -p <port> <username>@<host><br>前面是用户名，IP地址是服务器的地址。</host></username></port></p>
+<h2 id="3-输入密码"><a href="#3-输入密码" class="headerlink" title="3.输入密码"></a>3.输入密码</h2><h2 id="4-完成登录"><a href="#4-完成登录" class="headerlink" title="4.完成登录"></a>4.完成登录</h2><h1 id="步骤二：上传文件至服务器"><a href="#步骤二：上传文件至服务器" class="headerlink" title="步骤二：上传文件至服务器"></a>步骤二：上传文件至服务器</h1><h2 id="1-使用SCP上传文件"><a href="#1-使用SCP上传文件" class="headerlink" title="1.使用SCP上传文件"></a>1.使用SCP上传文件</h2><p>进入上传文件目录<br>scp <localfile> username@server:/path/to/remote/folder<br>scp -P <port> <localfile> username@server:/path/to/remote/folder<br>scp:使用scp上传文件的指令<br>localfile：上传的本地文件名<br>username：服务器上的用户名<br>server：服务器的IP地址或域名<br>/path/to/remote/folder服务器上的远程目录<br>简单来说，scp方法—上传的文件—上传的位置<br>手势·狗（叼着球）·（放到）位置</localfile></port></localfile></p>
+<h2 id="2-使用FTP上传文件"><a href="#2-使用FTP上传文件" class="headerlink" title="2.使用FTP上传文件"></a>2.使用FTP上传文件</h2><p>需要FTP应用程序，进行连接，拖拽，上传。（查询具体教程）</p>
+<h2 id="3-上传整个文件夹"><a href="#3-上传整个文件夹" class="headerlink" title="3.上传整个文件夹"></a>3.上传整个文件夹</h2><p>scp -r -P <port> <local_Path> <a href="mailto:&#117;&#x73;&#101;&#114;&#110;&#97;&#x6d;&#101;&#64;&#x78;&#x78;&#46;&#x78;&#x78;&#x2e;&#x78;&#x78;&#x2e;&#120;&#x78;">&#117;&#x73;&#101;&#114;&#110;&#97;&#x6d;&#101;&#64;&#x78;&#x78;&#46;&#x78;&#x78;&#x2e;&#x78;&#x78;&#x2e;&#120;&#x78;</a>:<aim_path><br>local_Path:C:\path\floder<br>aim_path:/home/user/files</aim_path></local_Path></port></p>
+<h1 id="步骤三：上传文件后的处理"><a href="#步骤三：上传文件后的处理" class="headerlink" title="步骤三：上传文件后的处理"></a>步骤三：上传文件后的处理</h1><h2 id="1-设置文件权限"><a href="#1-设置文件权限" class="headerlink" title="1.设置文件权限"></a>1.设置文件权限</h2><p>chmod 755 filename<br>chmod 755 filename 命令将文件 filename 的权限设置为允许所有者对文件具有完全权限，而与所有者同组的用户和其他用户只有读取和执行的权限。<br>设置这个文件的权限<br>-r:允许检索文件的内容（4）<br>-w：修改文件和目录（2）<br>-x：设置以后可以作为程序启动（1）<br>chmod -x <script name>：可以作为执行程序进行<br>chmod +rwx <filename>:添加执行全部权限<br>chmod --t <filename>:设置了sticky-bit，意味着用户不能删除这个文件<br>chmod o+wx test：表示将o（其他用户），w表示写入，x表示执行。+用于将指定的权限添加到test文件中。</p>
+<p>上面的方法用到了chmod最简单的运算符：</p>
+<ul>
+<li>指定的权限被添加到文件或目录</li>
+</ul>
+<ul>
+<li>删除文件或目录的指定权限<br>= 设置指定用户的权限<h2 id="2-更改文件的属性"><a href="#2-更改文件的属性" class="headerlink" title="2.更改文件的属性"></a>2.更改文件的属性</h2>chown user:group filename：设置文件的所有者和组</li>
+</ul>
+<h1 id="步骤四：从远程服务器下载文件"><a href="#步骤四：从远程服务器下载文件" class="headerlink" title="步骤四：从远程服务器下载文件"></a>步骤四：从远程服务器下载文件</h1><h2 id="1-下载文件"><a href="#1-下载文件" class="headerlink" title="1.下载文件"></a>1.下载文件</h2><p>scp <a href="mailto:&#x72;&#101;&#109;&#111;&#x74;&#x65;&#x5f;&#117;&#115;&#101;&#x72;&#110;&#97;&#109;&#x65;&#64;&#120;&#120;&#46;&#x78;&#x78;&#x2e;&#x78;&#x78;&#x2e;&#x78;&#120;">&#x72;&#101;&#109;&#111;&#x74;&#x65;&#x5f;&#117;&#115;&#101;&#x72;&#110;&#97;&#109;&#x65;&#64;&#120;&#120;&#46;&#x78;&#x78;&#x2e;&#x78;&#x78;&#x2e;&#x78;&#120;</a>:remote_filePath local_filePath<br>例如：scp <a href="mailto:&#x6e;&#x61;&#x6d;&#101;&#64;&#x39;&#x2e;&#57;&#46;&#x39;&#x2e;&#57;">&#x6e;&#x61;&#x6d;&#101;&#64;&#x39;&#x2e;&#57;&#46;&#x39;&#x2e;&#57;</a>:/home/user1/data/demo.csv /Desktop/test<br>简单来说：scp方法—服务器路径—本地下载路径<br>手势·（招手）指令某只狗·回到这边</p>
+<h2 id="2-下载文件夹"><a href="#2-下载文件夹" class="headerlink" title="2.下载文件夹"></a>2.下载文件夹</h2><p>scp -r remote_username@remote_ip:remote_filePath local_filePath<br>下载整个文件夹</p>
+<h1 id="额外补充内容"><a href="#额外补充内容" class="headerlink" title="额外补充内容"></a>额外补充内容</h1><h2 id="额外一：运行shell脚本"><a href="#额外一：运行shell脚本" class="headerlink" title="额外一：运行shell脚本"></a>额外一：运行shell脚本</h2><p>sh <script><br>如果脚本不在当前目录下，给出完整的路径</p>
+<h2 id="额外二：数据同步文件"><a href="#额外二：数据同步文件" class="headerlink" title="额外二：数据同步文件"></a>额外二：数据同步文件</h2><p>rsync指令归档<br>rsync [选项] 源 目标</p>
+<p>-a： 以归档模式进行同步，保持文件的所有权限、时间戳等属性</p>
+</script></p>]]></content>
+  </entry>
+  <entry>
+    <title>序列比对</title>
+    <url>/2024/04/30/%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9/</url>
+    <content><![CDATA[<blockquote>
+<p>序列比对：包含双序列比对和多序列比对。<br>其中包含三方面应用<br>· <strong>序列功能预测</strong>：了解未知序列和已知序列的相同点和不同点，可以推测未知序列的结构和功能<br>· <strong>分子进化分析</strong>：通过多序列比对。分析序列的相似性，判别序列之间的同源性<br>· <strong>搜索序列数据库</strong>：找到已发布的相似性和同源性序列</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Bioinf</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>生物信息数据资源</title>
+    <url>/2024/04/30/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E6%95%B0%E6%8D%AE%E8%B5%84%E6%BA%90/</url>
+    <content><![CDATA[<p>Keywords: fasta</p>
+<h1 id="核酸序列数据库"><a href="#核酸序列数据库" class="headerlink" title="核酸序列数据库"></a>核酸序列数据库</h1><h2 id="GenBank"><a href="#GenBank" class="headerlink" title="GenBank"></a>GenBank</h2><h3 id="GenBank数据格式"><a href="#GenBank数据格式" class="headerlink" title="GenBank数据格式"></a>GenBank数据格式</h3><p>GenBank常用数据格式为GenBank和Fasta格式</p>
+<blockquote>
+<p>fasta格式第二部分如果包含一些 | 类似的管道通道符，可能会影响到其他程序运行。在对于这部分进行生物信息分析时，最好缉拿话，采用如scaffold1这样的简单命名</p>
+</blockquote>
+<h2 id="Entrez-Nucleotide"><a href="#Entrez-Nucleotide" class="headerlink" title="Entrez Nucleotide"></a>Entrez Nucleotide</h2><h2 id="NCBI其他数据库"><a href="#NCBI其他数据库" class="headerlink" title="NCBI其他数据库"></a>NCBI其他数据库</h2><h1 id="蛋白质序列数据库"><a href="#蛋白质序列数据库" class="headerlink" title="蛋白质序列数据库"></a>蛋白质序列数据库</h1><h2 id="UniProt数据库"><a href="#UniProt数据库" class="headerlink" title="UniProt数据库"></a>UniProt数据库</h2><h1 id="蛋白质结构数据库"><a href="#蛋白质结构数据库" class="headerlink" title="蛋白质结构数据库"></a>蛋白质结构数据库</h1><h2 id="PDB数据库"><a href="#PDB数据库" class="headerlink" title="PDB数据库"></a>PDB数据库</h2><h2 id="RCSB-PDB数据库"><a href="#RCSB-PDB数据库" class="headerlink" title="RCSB PDB数据库"></a>RCSB PDB数据库</h2><h1 id="物种基因组数据库"><a href="#物种基因组数据库" class="headerlink" title="物种基因组数据库"></a>物种基因组数据库</h1><h1 id="非编码RNA数据库"><a href="#非编码RNA数据库" class="headerlink" title="非编码RNA数据库"></a>非编码RNA数据库</h1>]]></content>
+      <tags>
+        <tag>Bioinf</tag>
+      </tags>
   </entry>
 </search>
