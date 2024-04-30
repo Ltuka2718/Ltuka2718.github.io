@@ -5,4 +5,80 @@
     <url>/2023/09/05/Fuck-a-silver-living/</url>
     <content><![CDATA[]]></content>
   </entry>
+  <entry>
+    <title>文献信息检索</title>
+    <url>/2024/04/30/%E6%96%87%E7%8C%AE%E4%BF%A1%E6%81%AF%E6%A3%80%E7%B4%A2/</url>
+    <content><![CDATA[<h1 id="文献检索"><a href="#文献检索" class="headerlink" title="文献检索"></a>文献检索</h1><h2 id="文献检索词来源"><a href="#文献检索词来源" class="headerlink" title="文献检索词来源"></a>文献检索词来源</h2><p>检索和预期结果的一般排序：Title &gt; Keywords &gt; Abstract &gt; Fulltext</p>
+<h3 id="文献数据库的选择"><a href="#文献数据库的选择" class="headerlink" title="文献数据库的选择"></a>文献数据库的选择</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>网站</th>
+<th>收录文献类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Pubmed</td>
+<td><a href="http://www.ncbi.nlm.nih.gov/pubmed">http://www.ncbi.nlm.nih.gov/pubmed</a></td>
+<td>期刊</td>
+</tr>
+<tr>
+<td>中国知网</td>
+<td><a href="http://www.cnki.net/">http://www.cnki.net</a></td>
+<td>期刊、报纸、专利</td>
+</tr>
+</tbody></table>
+<h3 id="检索式构建"><a href="#检索式构建" class="headerlink" title="检索式构建"></a>检索式构建</h3><p>AND : A并且B<br>OR : A或者B<br>AND NOT : A并不B</p>
+<p>常用检索表</p>
+<table>
+<thead>
+<tr>
+<th>名称&amp;符号</th>
+<th>意义</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AND</td>
+<td></td>
+<td>A和B同时出现</td>
+</tr>
+<tr>
+<td>OR</td>
+<td></td>
+<td>A和B任一出现</td>
+</tr>
+<tr>
+<td>NOT</td>
+<td></td>
+<td>否定后者</td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>改变条件运算顺序</td>
+<td>复杂的运算式使用，里面包含方括号</td>
+</tr>
+<tr>
+<td>( )</td>
+<td>同上</td>
+<td>A AND (B OR C）</td>
+</tr>
+<tr>
+<td>*</td>
+<td>代替任意多字符</td>
+<td>A* 表示A开头的所有单词</td>
+</tr>
+<tr>
+<td>“”</td>
+<td></td>
+<td>代表精确搜索</td>
+</tr>
+<tr>
+<td>‘ ‘</td>
+<td></td>
+<td>强制作为一个词进行搜索</td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
 </search>
