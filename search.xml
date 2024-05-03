@@ -114,6 +114,26 @@
     <content><![CDATA[<blockquote>
 <p>序列比对：包含双序列比对和多序列比对。<br>其中包含三方面应用<br>· <strong>序列功能预测</strong>：了解未知序列和已知序列的相同点和不同点，可以推测未知序列的结构和功能<br>· <strong>分子进化分析</strong>：通过多序列比对。分析序列的相似性，判别序列之间的同源性<br>· <strong>搜索序列数据库</strong>：找到已发布的相似性和同源性序列</p>
 </blockquote>
+<h1 id="比对程序介绍"><a href="#比对程序介绍" class="headerlink" title="比对程序介绍"></a>比对程序介绍</h1><h2 id="FASTA"><a href="#FASTA" class="headerlink" title="FASTA"></a>FASTA</h2><h2 id="BLAST"><a href="#BLAST" class="headerlink" title="BLAST"></a>BLAST</h2><h1 id="比对序列相似性的统计特性"><a href="#比对序列相似性的统计特性" class="headerlink" title="比对序列相似性的统计特性"></a>比对序列相似性的统计特性</h1><p>无空位局部比对涉及的是等长度的一对序列片段，两个片段的各部分彼此比较。比对算法可以找到所有**高比值片段对（HSPs)**，即这些片段对的比较分值不会因片段的延伸而进一步的升高。<br>为了分析这样的概率，需要建立一个随机序列模型。独立随机变量的最大值倾向于极值分布。</p>
+<pre><code class="math">E = kmne^&#123;-\lambda s&#125;
+</code></pre>
+<p>该期望值为比值S的E值（E-value）</p>
+<blockquote>
+<p>这里的m和n是一定的序列长度，参数k和λ可以简单视作搜索步长和计分系统的特征数</p>
+</blockquote>
+<h2 id="Bit分值"><a href="#Bit分值" class="headerlink" title="Bit分值"></a>Bit分值</h2><pre><code class="math">S&#39;=\frac&#123;\lambda s -\ln_&#123;&#125;&#123;k&#125;&#125;&#123;\ln_&#123;&#125;&#123;2&#125;&#125;
+</code></pre>
+<p>最初获得的S值在没有统计量下没有意义，进行如上的标准化。称为Bit score。<br>E值可以简化为 </p>
+<pre><code class="math">E = mn2^&#123;-S&#39;&#125;
+</code></pre>
+<p>二进制使用的计分系统赋予了统计学意义，除了可以确定搜索步长，同样可以计算相应的显著水平。</p>
+<h2 id="P值（P-Value-（概率值）"><a href="#P值（P-Value-（概率值）" class="headerlink" title="P值（P-Value)（概率值）"></a>P值（P-Value)（概率值）</h2><p>具有大于或等于某一比值S的随机HSP数可由泊松分布（Poisson distribution）确定。可以计算出搜索到某一比值大于或等于S的HSP概率为</p>
+<pre><code class="math">e^&#123;-E&#125;\frac&#123;E^X&#125;&#123;X!&#125;
+</code></pre>
+<p>作为特例，搜索不到比值≥S的HSP概率，所以至少发现一个HSP（比值≥S）的概率为</p>
+<pre><code class="math">P = 1 - e^&#123;-E&#125; = 1 - (exp(-kmne^&#123;-\lambda s&#125;)
+</code></pre>
+<p>这是与比值S相关的P值（概率值），搜索到3个比值≥S的HSP的情况下，至少发现一个HSP的概率为0.95。BLAST程序中使用了E值而非P值，这主要是从直观和便于理解的角度考虑。<br>E值等于5和10，相当于P值等于0.993和0.99995更直观。但是当E＜0.01时，P值与E值接近相同。</p>
 ]]></content>
       <tags>
         <tag>Bioinf</tag>
