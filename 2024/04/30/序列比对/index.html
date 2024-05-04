@@ -97,7 +97,104 @@
 <pre><code class="math">P = 1 - e^&#123;-E&#125; = 1 - (exp(-kmne^&#123;-\lambda s&#125;)
 </code></pre>
 <p>这是与比值S相关的P值（概率值），搜索到3个比值≥S的HSP的情况下，至少发现一个HSP的概率为0.95。BLAST程序中使用了E值而非P值，这主要是从直观和便于理解的角度考虑。<br>E值等于5和10，相当于P值等于0.993和0.99995更直观。但是当E＜0.01时，P值与E值接近相同。</p>
-
+<h2 id="数据库搜索策略"><a href="#数据库搜索策略" class="headerlink" title="数据库搜索策略"></a>数据库搜索策略</h2><p>E值可以用于两个蛋白质长度为m和n进行比较。<br>严格考虑，留空</p>
+<h2 id="空位比对的统计分体"><a href="#空位比对的统计分体" class="headerlink" title="空位比对的统计分体"></a>空位比对的统计分体</h2><p>对于非空位比对可以基于替换矩阵和比较序列的残基频率的办法估计统计参数；<br>对于空位比对，参数的估计则必须以“随机”序列的大尺度比较为依据。</p>
+<h2 id="边际效应Edge-Effect"><a href="#边际效应Edge-Effect" class="headerlink" title="边际效应Edge Effect"></a>边际效应Edge Effect</h2><p>统计学方法对短序列有偏差，本质上是一个渐进理论，假设局部比对可以适用任何规模的比对。</p>
+<h2 id="替换矩阵的选择"><a href="#替换矩阵的选择" class="headerlink" title="替换矩阵的选择"></a>替换矩阵的选择</h2><h2 id="空位罚值gap-penalties"><a href="#空位罚值gap-penalties" class="headerlink" title="空位罚值gap penalties"></a>空位罚值gap penalties</h2><p>空位处理是针对序列进化过程中可能发生的插入和缺失而设计的。插入和缺失可能只涉及1个或2个残基，也可能涉及整个功能域（domain），所以在进行空位罚值设计时必须反映这些情况。</p>
+<pre><code class="math">w_k = a +bk
+</code></pre>
+<p>这里的a是空位设置罚值，b是空位扩展罚值<br><strong>空位设置和空位扩展罚值比对的影响</strong><br>| 空位设置罚值 |空位扩展罚值  | 说明 |<br>| — | — | — |<br>| 大 |大  |极少插入或缺失：适用于紧密相关蛋白质间的比对  |<br>| 大 | 小 | 少量大块插入：用于整个功能域可能插入的情况 |<br>| 小 | 大 | 大量小块插入：适用于亲缘关系较远的蛋白质同源性分析 |</p>
+<h1 id="在线BLAST序列比对"><a href="#在线BLAST序列比对" class="headerlink" title="在线BLAST序列比对"></a>在线BLAST序列比对</h1><h1 id="本地运行BLAST"><a href="#本地运行BLAST" class="headerlink" title="本地运行BLAST"></a>本地运行BLAST</h1><h2 id="BLAST下载和安装"><a href="#BLAST下载和安装" class="headerlink" title="BLAST下载和安装"></a>BLAST下载和安装</h2><pre><code>ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/
+</code></pre>
+<p>Windows可以直接下载exe结尾的可执行文件</p>
+<h2 id="索引格式化"><a href="#索引格式化" class="headerlink" title="索引格式化"></a>索引格式化</h2><p>使用到makeblastdb.exe命令</p>
+<pre><code>makeblastdb in mydb.fsa -dbtype nucl -parse_seqids
+</code></pre>
+<ul>
+<li><p> -in：表示输入的数据文件</p>
+</li>
+<li><p> -dbtype：表示该序列数据是核酸（nucl）还是蛋白质（prot）</p>
+</li>
+<li><p> -parse_seqids：表示从fasta输入格式中解析序列标识符</p>
+<h2 id="运行BLAST程序，搜索本地序列数据库"><a href="#运行BLAST程序，搜索本地序列数据库" class="headerlink" title="运行BLAST程序，搜索本地序列数据库"></a>运行BLAST程序，搜索本地序列数据库</h2><pre><code>blastn.exe -db mydb.fsa -query tp53.fsa -out results.out
+</code></pre>
+<p>BLAST参数设置表</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>缺省值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-db</td>
+<td>无</td>
+<td>BLAST的数据库名称</td>
+</tr>
+<tr>
+<td>-query</td>
+<td>stdin</td>
+<td>查询序列文件名</td>
+</tr>
+<tr>
+<td>-out</td>
+<td>stdout</td>
+<td>输出文件名</td>
+</tr>
+<tr>
+<td>-outfmt</td>
+<td>0</td>
+<td>输出文件格式，总共有12种格式，6是tabular格式</td>
+</tr>
+<tr>
+<td>-evalue</td>
+<td>10.0</td>
+<td>设置输出结果的e-value值</td>
+</tr>
+<tr>
+<td>-num_descriptions</td>
+<td>500</td>
+<td>tabular格式输出结果的条数</td>
+</tr>
+<tr>
+<td>-num_threads</td>
+<td>1</td>
+<td>使用的线程数</td>
+</tr>
+<tr>
+<td>outfmt常用参数为输出列表格式：</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>query id：查询序列标识符</p>
+</li>
+<li><p>subject id：数据库中比对的目标序列标识符</p>
+</li>
+<li><p>%identity：查询序列与目标序列比对一致率</p>
+</li>
+<li><p>alignment length：查询序列与目标序列比对上的片段长度</p>
+</li>
+<li><p>mismatches：查询序列与目标序列比对上的片段长度</p>
+</li>
+<li><p>gap openings：打开空位计数</p>
+</li>
+<li><p>q.Start：查询序列比对起始位点</p>
+</li>
+<li><p>q.End：查询序列比对终止位点</p>
+</li>
+<li><p>s.Start：数据库序列比对目标序列起始位点</p>
+</li>
+<li><p>s.End：数据库序列比对目标序列终止位点</p>
+</li>
+<li><p>e-value：E值</p>
+</li>
+<li><p>bit score：序列匹配得分</p>
+</li>
+</ul>
+<h1 id="多序列比对"><a href="#多序列比对" class="headerlink" title="多序列比对"></a>多序列比对</h1><h2 id="ClustalX使用"><a href="#ClustalX使用" class="headerlink" title="ClustalX使用"></a>ClustalX使用</h2>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
@@ -133,7 +230,7 @@
     </div>
     
         <div class="side">
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AF%94%E5%AF%B9%E7%A8%8B%E5%BA%8F%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">比对程序介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#FASTA"><span class="toc-number">1.1.</span> <span class="toc-text">FASTA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BLAST"><span class="toc-number">1.2.</span> <span class="toc-text">BLAST</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AF%94%E5%AF%B9%E5%BA%8F%E5%88%97%E7%9B%B8%E4%BC%BC%E6%80%A7%E7%9A%84%E7%BB%9F%E8%AE%A1%E7%89%B9%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text">比对序列相似性的统计特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Bit%E5%88%86%E5%80%BC"><span class="toc-number">2.1.</span> <span class="toc-text">Bit分值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P%E5%80%BC%EF%BC%88P-Value-%EF%BC%88%E6%A6%82%E7%8E%87%E5%80%BC%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">P值（P-Value)（概率值）</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AF%94%E5%AF%B9%E7%A8%8B%E5%BA%8F%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">比对程序介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#FASTA"><span class="toc-number">1.1.</span> <span class="toc-text">FASTA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BLAST"><span class="toc-number">1.2.</span> <span class="toc-text">BLAST</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AF%94%E5%AF%B9%E5%BA%8F%E5%88%97%E7%9B%B8%E4%BC%BC%E6%80%A7%E7%9A%84%E7%BB%9F%E8%AE%A1%E7%89%B9%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text">比对序列相似性的统计特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Bit%E5%88%86%E5%80%BC"><span class="toc-number">2.1.</span> <span class="toc-text">Bit分值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P%E5%80%BC%EF%BC%88P-Value-%EF%BC%88%E6%A6%82%E7%8E%87%E5%80%BC%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">P值（P-Value)（概率值）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5"><span class="toc-number">2.3.</span> <span class="toc-text">数据库搜索策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E4%BD%8D%E6%AF%94%E5%AF%B9%E7%9A%84%E7%BB%9F%E8%AE%A1%E5%88%86%E4%BD%93"><span class="toc-number">2.4.</span> <span class="toc-text">空位比对的统计分体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%B9%E9%99%85%E6%95%88%E5%BA%94Edge-Effect"><span class="toc-number">2.5.</span> <span class="toc-text">边际效应Edge Effect</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%BF%E6%8D%A2%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%89%E6%8B%A9"><span class="toc-number">2.6.</span> <span class="toc-text">替换矩阵的选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E4%BD%8D%E7%BD%9A%E5%80%BCgap-penalties"><span class="toc-number">2.7.</span> <span class="toc-text">空位罚值gap penalties</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BFBLAST%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9"><span class="toc-number">3.</span> <span class="toc-text">在线BLAST序列比对</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E8%BF%90%E8%A1%8CBLAST"><span class="toc-number">4.</span> <span class="toc-text">本地运行BLAST</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#BLAST%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85"><span class="toc-number">4.1.</span> <span class="toc-text">BLAST下载和安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="toc-number">4.2.</span> <span class="toc-text">索引格式化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8CBLAST%E7%A8%8B%E5%BA%8F%EF%BC%8C%E6%90%9C%E7%B4%A2%E6%9C%AC%E5%9C%B0%E5%BA%8F%E5%88%97%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">4.3.</span> <span class="toc-text">运行BLAST程序，搜索本地序列数据库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9"><span class="toc-number">5.</span> <span class="toc-text">多序列比对</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ClustalX%E4%BD%BF%E7%94%A8"><span class="toc-number">5.1.</span> <span class="toc-text">ClustalX使用</span></a></li></ol></li></ol>
         </div>
     
 </div>
